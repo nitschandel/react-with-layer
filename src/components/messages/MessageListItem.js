@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import TextMessagePart from './TextMessagePart';
 import QuoteMessagePart from './QuoteMessagePart';
-import HtmlMessagePart from './HtmlMessagePart';
+import JSONMessagePart from './JSONMessagePart';
 import Avatar from '../Avatar';
 
 /**
@@ -53,9 +53,9 @@ export default class MessageListItem extends Component {
           <QuoteMessagePart
             key={messagePart.id}
             messagePart={messagePart}/>);
-      case 'text/html':
+      case 'text/json':
             return (
-              <HtmlMessagePart
+              <JSONMessagePart
                 key={messagePart.id}
                 messagePart={messagePart}/>);
       default:
@@ -68,6 +68,7 @@ export default class MessageListItem extends Component {
     const { message } = this.props;
     const user = message.sender;
     const messageStatus = this.getMessageStatus(message);
+    console.log(message);
 
     return (
       <div className='message-item'>

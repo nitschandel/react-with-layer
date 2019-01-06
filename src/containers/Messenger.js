@@ -6,7 +6,6 @@ import { connectQuery } from 'layer-react';
 import * as MessengerActions from '../actions/messenger';
 import ConversationList from '../components/ConversationList';
 import ConversationListHeader from '../components/ConversationListHeader';
-import AnnouncementsList from '../components/announcements/MessageList';
 import UserListDialog from '../components/UserListDialog';
 
 /**
@@ -46,17 +45,6 @@ function getQueries() {
 @connect(mapStateToProps, mapDispatchToProps)
 @connectQuery({}, getQueries)
 export default class Messenger extends Component {
-
-  /**
-   * Hide the Announcements Dialog
-   */
-  hideAnnouncements = (event) => {
-    const { actions } = this.props;
-    const { hideAnnouncements } = actions;
-    if (event.target.parentNode.classList.contains('announcements-dialog')) {
-      hideAnnouncements();
-    }
-  }
 
   /**
    * Hide the Participants Dialog

@@ -82,7 +82,9 @@ export default class ActiveConversation extends Component {
         <MessageComposer
           value={composerMessage}
           onChange={actions.changeComposerMessage}
-          onSubmit={actions.submitComposerMessage}/>
+          onSubmit={actions.submitComposerMessage}
+          onSubmitLocation={actions.submitComposerLocation}
+          />
       </div>
     );
   }

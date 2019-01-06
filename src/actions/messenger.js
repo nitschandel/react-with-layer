@@ -67,6 +67,13 @@ export function submitComposerMessage() {
   };
 }
 
+export function submitComposerLocation(data) {
+  return {
+    type: SUBMIT_COMPOSER_LOCATION,
+    data
+  };
+}
+
 export function fetchUsersSuccess(users) {
   return {
     type: FETCH_USERS_SUCCESS,

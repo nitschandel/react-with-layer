@@ -69,12 +69,20 @@ function handleAction(layerClient, typingPublisher, state, action, next) {
 
       const conversation = layerClient
           .getConversation(`layer:///conversations/${state.router.params.conversationId}`, true);
-      const text = state.activeConversation.composerMessage;
+      const data = action.data;
       let message;
+      let body = JSON.stringify({
+        title: "Mileage",
+        name: data.name,
+        startLocation: data.startLocation,
+        endLocation: data.endLocation,
+        mileage: data.mileage
+      });
+      console.log(body);
       message = conversation.createMessage({
         parts: [{
-          mimeType: 'text/html',
-          body: "<a href='yo'>text</a>"
+          mimeType: 'text/json',
+          body
         }]
       });
       message.send();

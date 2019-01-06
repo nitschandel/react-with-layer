@@ -39,12 +39,6 @@ export default class ConversationListHeader extends Component {
       <div className='panel-header conversations-header'>
         <div className={'layer-presence layer-presence-' + owner.status.toLowerCase()} onClick={this.togglePresence}></div>
         <div className='title'>{owner.displayName}'s Conversations</div>
-        <a className={announcementClasses.join(' ')} onClick={this.showAnnouncements}>
-          <i className="icon fa fa-bullhorn"></i>
-        </a>
-        <a href='#' onClick={this.handleShowParticipants}>
-          <i className="icon fa fa-pencil-square-o"></i>
-        </a>
       </div>
     );
   }

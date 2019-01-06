@@ -15,6 +15,7 @@ export default class MessageComposer extends Component {
     this.changeToPlusSign = this.changeToPlusSign.bind(this);
     this.showChatFormModal = this.showChatFormModal.bind(this);
     this.closeChatFormModal = this.closeChatFormModal.bind(this);
+    this.onSubmitChatFormModal = this.onSubmitChatFormModal.bind(this);
   }
 
   changeToPlusSign(event){
@@ -36,9 +37,9 @@ export default class MessageComposer extends Component {
   }
 
   closeChatFormModal(){
-    console.log("here");
     this.setState({
-      showChatFormModal: false
+      showChatFormModal: false,
+      addButtonClass: "plus"
     });
   }
 
@@ -60,6 +61,14 @@ export default class MessageComposer extends Component {
         this.props.onSubmit();
       }
     }
+  }
+
+  onSubmitChatFormModal(data){
+    this.setState({
+      showChatFormModal: false,
+      addButtonClass: "plus"
+    });
+    this.props.onSubmitLocation(data);
   }
 
   render() {
@@ -85,7 +94,8 @@ export default class MessageComposer extends Component {
           onChange={this.handleChange}/>
         {this.state.showChatFormModal?
         <ChatFormModal 
-          onCancel={() =>this.closeChatFormModal}
+          onCancel={this.closeChatFormModal}
+          onSubmit={this.onSubmitChatFormModal}
           {...this.state}
         />
         :undefined}
