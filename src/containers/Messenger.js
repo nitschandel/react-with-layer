@@ -15,7 +15,6 @@ function mapStateToProps({ app, announcementState, participantState, router }) {
   return {
     owner: app.owner,
     ready: app.ready,
-    showAnnouncements: announcementState.showAnnouncements,
     participantState,
     activeConversationId: `layer:///conversations/${router.params.conversationId}`,
   };
@@ -74,7 +73,6 @@ export default class Messenger extends Component {
         <ConversationListHeader
           owner={owner}
           unreadAnnouncements={Boolean(announcements.filter(item => item.isUnread).length)}
-          onShowAnnouncements={actions.showAnnouncements}
           onShowParticipants={actions.showParticipants}
           onTogglePresence={actions.togglePresence}/>
         <ConversationList

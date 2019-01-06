@@ -12,16 +12,6 @@ export default class ConversationListHeader extends Component {
     event.preventDefault();
     this.props.onShowParticipants();
   }
-
-  /**
-   * Show the Announcements Dialog
-   */
-  showAnnouncements = (event) => {
-    event.preventDefault();
-    this.props.onShowAnnouncements();
-  }
-
-
   /**
    * Toggle presence between BUSY and AVAILABLE
    */
@@ -39,6 +29,9 @@ export default class ConversationListHeader extends Component {
       <div className='panel-header conversations-header'>
         <div className={'layer-presence layer-presence-' + owner.status.toLowerCase()} onClick={this.togglePresence}></div>
         <div className='title'>{owner.displayName}'s Conversations</div>
+        <a href='#' onClick={this.handleShowParticipants}>
+          <i className="icon fa fa-pencil-square-o"></i>
+        </a>
       </div>
     );
   }

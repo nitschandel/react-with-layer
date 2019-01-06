@@ -19,8 +19,6 @@ export const MARK_MESSAGE_READ = 'MARK_MESSAGE_READ';
 export const LOAD_MORE_MESSAGES = 'LOAD_MORE_MESSAGES';
 export const ROUTER_DID_CHANGE = '@@reduxReactRouter/routerDidChange';
 export const DELETE_CONVERSATION = 'DELETE_CONVERSATION';
-export const SHOW_ANNOUNCEMENTS = 'SHOW_ANNOUNCEMENTS';
-export const HIDE_ANNOUNCEMENTS = 'HIDE_ANNOUNCEMENTS';
 export const OWNER_SET = 'OWNER_SET';
 export const TOGGLE_PRESENCE = 'TOGGLE_PRESENCE';
 
@@ -163,19 +161,6 @@ export function markMessageRead(messageId) {
       messageId
     }
   }
-}
-
-
-export function showAnnouncements() {
-  return {
-    type: SHOW_ANNOUNCEMENTS
-  };
-}
-
-export function hideAnnouncements() {
-  return {
-    type: HIDE_ANNOUNCEMENTS
-  };
 }
 
 export function togglePresence() {

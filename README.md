@@ -1,6 +1,6 @@
-# React chat UI example using Layer SDK
+# React chat UI using Layer SDK
 
-This is a simple example on how one would use the Layer Web SDK with the [ReactJS](https://reactjs.org) framework.
+This is sample chat using Layer SDK along with map support in React
 
 ### Installation
 
@@ -14,13 +14,4 @@ To run this project use the following command:
 
     npm start
 
-Point your browser to: [localhost:8080](http://localhost:8080)
-
-### Architecture
-
-Understanding this application requires understanding two things:
-
-1. [Redux](http://rackt.org/redux/) architecture
-2. [layer-react](https://www.npmjs.com/package/layer-react) module
-
-The layer-react module provides a LayerProvider for wrapping UI Components; it takes as input a Client, and passes to its children the output of Conversation and Message queries.
+Point your browser to: [localhost:4000](http://localhost:4000)
