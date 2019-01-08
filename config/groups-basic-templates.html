@@ -1,0 +1,58 @@
+<template>
+  <style>
+    layer-message-item-sent, layer-message-item-received {
+      display: block;
+    }
+
+    layer-message-item-sent .layer-list-item, layer-message-item-received .layer-list-item {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .layer-message-item-main {
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .layer-message-item-content-outer {
+
+    }
+    layer-message-item-sent layer-delete.layer-delete-enabled,
+    layer-message-item-received layer-delete.layer-delete-enabled {
+      display: inline;
+      width: 12px;
+      height: 12px;
+      padding: 4px;
+      margin-right: 5px;
+      border: solid 1px transparent;
+      cursor: default;
+    }
+
+    layer-message-item-received layer-message-status {
+      display: none;
+    }
+
+  </style>
+  <div class='layer-list-item' layer-id='innerNode'>
+    <!-- <layer-avatar layer-id='avatar'></layer-avatar> -->
+    <div class='layer-message-item-main' layer-id='messageRow'>
+      <div class='layer-sender-info'>
+        <span class='layer-sender-name' layer-id='sender'></span>
+        <layer-message-status layer-id='status'></layer-message-status>
+        <layer-date layer-id='date'></layer-date>
+      </div>
+      <div class='layer-message-item-content-outer'>
+        <div class='layer-message-item-content' layer-id='content'></div>
+      </div>
+    </div>
+    <layer-delete layer-id='delete'></layer-delete>
+  </div>
+</template>
+<script>
+  // Calling registerTemplate modifies the template; which means it can not be called twice in a row
+  // on the same template.
+  var template = document.createElement('template');
+  template.innerHTML = document._currentScript.ownerDocument.querySelector('template').innerHTML;
+  window.layerUI.registerTemplate('layer-message-item-sent', template);
+  window.layerUI.registerTemplate('layer-message-item-received');
+</script>

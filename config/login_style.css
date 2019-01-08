@@ -1,0 +1,91 @@
+/* Login Screen */
+#identity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: #F4F5F6;
+  z-index: 100;
+}
+#identity > form {
+  position: absolute;
+  width: 500px;
+  height: 380px;
+  top: -120px;
+  bottom: 0px;
+  left: 45%;
+  margin: auto 0px auto -166px;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #e4e9ec;
+  border-radius: 16px;
+}
+#identity img {
+  display: block;
+  margin: 16px auto;
+  width: 32px;
+}
+#identity h1 {
+  width: 350px;
+  margin: 0 auto 44px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 400;
+  font-family: "Raleway";
+}
+#identity p {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#identity input[type="text"],
+#identity input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: #fafbfc;
+  border: 1px solid #e4e9ec;
+  border-radius: 6px;
+}
+#identity label {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  -webkit-align-items: center;
+  padding: 2px 0;
+  font-size: 14px;
+}
+
+#identity label #newusername {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+#identity button {
+  width: 100%;
+  margin-top: 10px;
+  color: #FFF;
+  border: 1px solid #27A6E1;
+  border-radius: 6px;
+  background-color: #27A6E1;
+  padding: 0px 12px;
+  font-size: 14px;
+  line-height: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.fa-spinner {
+  font-size: 18px;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: red;
+  text-align: center;
+}

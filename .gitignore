@@ -19,9 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea
 
 package-lock.json
-../ui/buyer_catalogue/package-lock.json
-*.css
-*.rdb
-*.log
